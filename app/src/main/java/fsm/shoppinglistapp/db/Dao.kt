@@ -11,5 +11,5 @@ interface Dao {
     @Query("SELECT * FROM note_list")
     fun getAllNotes() : Flow<List<NoteItem>>
     @Insert
-    suspend fun insertNote(note : NoteItem)
+    fun insertNote(note : NoteItem)
 }
