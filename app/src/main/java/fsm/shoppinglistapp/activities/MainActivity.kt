@@ -6,6 +6,7 @@ import fsm.shoppinglistapp.R
 import fsm.shoppinglistapp.databinding.ActivityMainBinding
 import fsm.shoppinglistapp.fragments.FragmentManager
 import fsm.shoppinglistapp.fragments.NoteFragment
+import fsm.shoppinglistapp.fragments.ShopListNamesFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        FragmentManager.setFragment(ShopListNamesFragment.newInstance(), this)
         setBottomNavListener()
     }
 
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                     FragmentManager.setFragment(NoteFragment.newInstance(), this)
                 }
                 R.id.shop_list -> {
-                    Log.d("MyLog", "3")
+                    FragmentManager.setFragment(ShopListNamesFragment.newInstance(), this)
                 }
                 R.id.new_item -> {
                     FragmentManager.currentFrag?.onClickNew()
