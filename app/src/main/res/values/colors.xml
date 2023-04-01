@@ -8,7 +8,9 @@
     <color name="green_main">#178A26</color>
     <color name="green_main_dark">#10671B</color>
     <color name="black">#FF000000</color>
+    <color name="grey">#A2A2A2</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#C3B009</color>
 
     <color name="picker_red">#E32020</color>
     <color name="picker_green">#2AA52F</color>

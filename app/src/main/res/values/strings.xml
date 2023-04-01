@@ -21,4 +21,9 @@
     <string name="new_item_in_list">New item</string>
     <string name="save_item">Save Item</string>
     <string name="new_item_hint">new item</string>
+    <string name="empty">Empty</string>
+    <string name="update_list_item">Update list item</string>
+    <string name="name">Name</string>
+    <string name="item_info">Item info</string>
+    <string name="update">UPDATE</string>
 </resources>
