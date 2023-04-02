@@ -1,12 +1,14 @@
 package fsm.shoppinglistapp.fragments
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import fsm.shoppinglistapp.activities.MainApp
 import fsm.shoppinglistapp.activities.ShoppingListActivity
@@ -21,6 +23,7 @@ import fsm.shoppinglistapp.utils.TimeManager
 class ShopListNamesFragment : BaseFragment(), ShoppingListNameAdapter.Listener{
     private lateinit var binding: FragmentShopListNamesBinding
     private lateinit var adapter: ShoppingListNameAdapter
+    private lateinit var defPref: SharedPreferences
 
     private val mainViewModel: MainViewModel by activityViewModels {
         MainViewModel.MainViewModelFactory((context?.applicationContext as MainApp).database)
@@ -63,7 +66,8 @@ class ShopListNamesFragment : BaseFragment(), ShoppingListNameAdapter.Listener{
 
     private fun initRcView()= with(binding){
         rcView.layoutManager = LinearLayoutManager(activity)
-        adapter = ShoppingListNameAdapter(this@ShopListNamesFragment)
+        defPref = PreferenceManager.getDefaultSharedPreferences(requireActivity())
+        adapter = ShoppingListNameAdapter(this@ShopListNamesFragment, defPref)
         rcView.adapter = adapter
     }
 
