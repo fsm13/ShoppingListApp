@@ -1,6 +1,7 @@
 package fsm.shoppinglistapp.db
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +15,10 @@ import fsm.shoppinglistapp.databinding.ListNameItemBinding
 import fsm.shoppinglistapp.entities.ShoppingListItem
 import fsm.shoppinglistapp.entities.ShoppingListNameItem
 import fsm.shoppinglistapp.fragments.ShopListNamesFragment
+import fsm.shoppinglistapp.utils.TimeManager
 
 
-class ShoppingListNameAdapter(private val listener: Listener) :
+class ShoppingListNameAdapter(private val listener: Listener, private val defPref: SharedPreferences) :
     ListAdapter<ShoppingListNameItem, ShoppingListNameAdapter.ItemHolder>(ItemComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
@@ -24,15 +26,16 @@ class ShoppingListNameAdapter(private val listener: Listener) :
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        holder.setData(getItem(position), listener)
+        holder.setData(getItem(position), listener, defPref)
     }
 
     class ItemHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ListNameItemBinding.bind(view)
 
-        fun setData(shoppingListNameItem: ShoppingListNameItem, listener: Listener) = with(binding) {
+        fun setData(shoppingListNameItem: ShoppingListNameItem, listener: Listener,
+                    defPref: SharedPreferences) = with(binding) {
             tvListName.text = shoppingListNameItem.name
-            tvListTime.text = shoppingListNameItem.time
+            tvListTime.text = TimeManager.getTimeFormat(shoppingListNameItem.time, defPref)
             pBar.max = shoppingListNameItem.allItemCounter
             pBar.progress = shoppingListNameItem.checkedItemsCounter
             val colorState = ColorStateList.valueOf(getProgressColorState(shoppingListNameItem,
