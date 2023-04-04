@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="note_style_array">
-        <item>Linear</item>
-        <item>Grid</item>
+        <item>@string/Linear</item>
+        <item>@string/Grid</item>
     </string-array>
     <string-array name="note_style_values">
         <item>Linear</item>
@@ -19,8 +19,8 @@
     </string-array>
 
     <string-array name="theme_format">
-        <item>Blue theme</item>
-        <item>Green theme</item>
+        <item>@string/Blue_theme</item>
+        <item>@string/Green_theme</item>
     </string-array>
     <string-array name="theme_format_values">
         <item>blue</item>

@@ -11,7 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="android:windowFullscreen">true</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/blue_dark</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="Theme.NewNoteBlue" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
@@ -24,7 +24,7 @@
         <item name="colorSecondaryVariant">@color/blue_light</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/blue_dark</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -39,7 +39,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="android:windowFullscreen">true</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/green_main</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="Theme.NewNoteGreen" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
@@ -52,10 +52,7 @@
         <item name="colorSecondaryVariant">@color/green_main</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/green_main</item>
         <!-- Customize your theme here. -->
-    </style>
-    <style name="Theme.EditBlue" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorSecondary">@color/white</item>
     </style>
 </resources>
